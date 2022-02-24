@@ -1,9 +1,12 @@
 # forum-aspnet-core6
 Projeto .NET C# com fluxo simples de cadastro, edição e exclusão de topicos com login simples tudo com RazorPages
 
+# demo
+http://virgnet-forum.azurewebsites.net/
+
 # instruções
-  dotnet ef database update (Na pasta da aplicação repository)
-  dotnet run seeddata (Na pasta da aplicação web)
+dotnet ef database update (Na pasta da aplicação repository)
+dotnet run seeddata (Na pasta da aplicação web)
    
   usuários padrões
   username: maria / password: 123
