@@ -4,14 +4,14 @@ Projeto .NET C# com fluxo simples de cadastro, edição e exclusão de topicos c
 # demo
 http://virgnet-forum.azurewebsites.net/
 
+usuários padrões
+- username: maria / password: 123
+- username: miguel / password: 123
+
 # instruções
 dotnet ef database update (Na pasta da aplicação repository)
 dotnet run seeddata (Na pasta da aplicação web)
    
-  usuários padrões
-  username: maria / password: 123
-  username: miguel / password: 123
-
 # fluxo de negócio
 - A visualização dos tópicos é pública
 - Apenas os usuários autenticados podem cadastrar novos tópicos
