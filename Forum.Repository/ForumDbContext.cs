@@ -16,7 +16,7 @@ namespace Forum.Repository
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=localhost;Database=forum-db;User=sa;Password=@123mudar";
+            var connectionString = "Server=localhost;Database=forum-db;User=sa;Password=***";
             optionsBuilder.UseSqlServer(connectionString);
         }
 
