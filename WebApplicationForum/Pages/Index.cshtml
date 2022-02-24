@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h2>Topics</h2>
+
+@if (!Model.userId.Equals(Guid.Empty))
+{
+    <h3>Hello, @Model.userName</h3>
+    <div class="d-grid d-md-flex justify-content-md-end mb-3">
+        <a class="btn btn-outline-success me-2" asp-page="/Topic/New">New topic</a>
+        <a class="btn btn-outline-danger" asp-page="/Login/LogOff">LogOff</a>
+    </div>
+}
+else
+{
+    <h3>Hello, public visitor!</h3>
+    <div class="d-grid d-md-flex justify-content-md-end mb-3">
+        <a class="btn btn-outline-primary" asp-page="/Login/Index">Login</a>
+    </div>
+}
+
+<h4>Total topics: @Model.TopicList.Count()</h4>
+@foreach (var item in @Model.TopicList)
+{
+    <div class="card text-center mb-3">
+        <div class="card-header">
+            @item.CreationDate.ToShortDateString()
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@item.Title</h5>
+            <p class="card-text">@item.Description</p>
+        </div>
+        @if (Model.userId.Equals(@item.UserId))
+        {
+            <div class="card-footer text-end">
+                <a class="btn btn-outline-primary" asp-route-ID="@item.TopicId" asp-page="/Topic/Edit">Edit</a>
+                <a class="btn btn-outline-danger" asp-route-ID="@item.TopicId" asp-page="/Topic/Delete">Delete</a>
+            </div>
+        }
+    </div>
+}

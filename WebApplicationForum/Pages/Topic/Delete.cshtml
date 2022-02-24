@@ -1,0 +1,26 @@
+﻿@page
+@model WebApplicationForum.Pages.Topic.DeleteModel
+@{
+}
+
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-header">
+                    Delete topic
+                </div>
+                <form method="post">
+                    <div class="card-body">
+                        <input hidden asp-for="topic.TopicId" class="form-control" />
+                        <p class="card-text">You confirm the deletion of the topic @Model.topic.Title?<p>
+                    </div>
+                    <div class="card-footer text-end">
+                        <a class="btn btn-outline-danger mr-3" asp-page="/Index">No</a>
+                        <button type="submit" class="btn btn-outline-primary ml-2">Yes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
